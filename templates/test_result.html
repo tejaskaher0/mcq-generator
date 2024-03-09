@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Admin Dashboard - User Scores</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+        {% for score in all_scores %}
+        <tr>
+            <td>{{ score.id }}</td>
+            <td>{{ score.username }}</td>
+            <td>{{ score.score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mcq {
+    margin-bottom: 20px;
+}
+
+.mcq p {
+    margin-bottom: 10px;
+}
+
+.mcq ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mcq ul li {
+    margin-bottom: 5px;
+}

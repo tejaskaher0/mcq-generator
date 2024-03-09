@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Generation Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        a, button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        a:hover, button:hover {
+            background-color: #0056b3;
+        }
+        button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Generation Successful</h1>
+        <p>The exam has been generated successfully. You can now view the generated questions.</p>
+        <div class="btn-container">
+   
+            <button id="select-exam-btn">Select Exam</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript to handle button click event
+        document.getElementById('select-exam-btn').addEventListener('click', function() {
+            window.location.href = '/select_exam';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../mcq"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mcq_geneartor"
+	}
+}

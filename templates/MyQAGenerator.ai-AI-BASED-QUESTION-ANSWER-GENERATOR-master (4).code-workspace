@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../MyQAGenerator.ai-AI-BASED-QUESTION-ANSWER-GENERATOR-master (4)"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mcq_geneartor"
+	}
+}

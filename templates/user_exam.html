@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Exam Form</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center; /* Align all content center */
+}
+
+h1 {
+    color: #333;
+}
+
+.question {
+    margin: 0 auto; /* Center the question div */
+    text-align: left; /* Align text inside question div to left */
+    max-width: 600px; /* Adjust max width of question div */
+}
+
+.question p {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.question input[type="radio"] {
+    margin-right: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px auto; /* Center the horizontal line */
+    max-width: 600px; /* Adjust max width of horizontal line */
+}
+
+#totalQuestions {
+    font-weight: bold;
+    color: blue;
+}
+
+#submitBtn {
+    display: inline-block; /* Display submit button as inline-block */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Add margin to the top of submit button */
+}
+
+#submitBtn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>Submit Exam</h1>
+
+    <h4> Total Questions: <span id="totalQuestions"></span></h4>
+
+    <form action="{{ url_for('submit_exam') }}" method="post" id="examForm">
+        {% for mcq in mcqs %}
+        <div class="question">
+            <p>{{ mcq.question }}</p>
+            <input type="radio" name="answer_{{ mcq.id }}" value="{{ mcq.choice1 }}"> {{ mcq.choice1 }}<br>
+            <input type="radio" name="answer_{{ mcq.id }}" value="{{ mcq.choice2 }}"> {{ mcq.choice2 }}<br>
+            <input type="radio" name="answer_{{ mcq.id }}" value="{{ mcq.choice3 }}"> {{ mcq.choice3 }}<br>
+            <input type="radio" name="answer_{{ mcq.id }}" value="{{ mcq.choice4 }}"> {{ mcq.choice4 }}<br>
+        </div>
+        <hr>
+        {% endfor %}
+        <!-- Ensure that the name attribute matches the one used in the Flask route -->
+        <input type="hidden" name="total_rendered_questions" id="total_rendered_questions">
+        <button id="submitBtn" type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Count the number of questions
+            var totalQuestions = document.querySelectorAll('.question').length;
+            document.getElementById('totalQuestions').textContent = totalQuestions;
+            // Set the value of the hidden input field
+            document.getElementById('total_rendered_questions').value = totalQuestions;
+        });
+    </script>
+
+</body>
+
+</html>
